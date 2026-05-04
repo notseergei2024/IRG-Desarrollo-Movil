@@ -1,18 +1,17 @@
-# Proyecto IRG - Mobile App (TypeScript)
+# Proyecto IRG - Mobile App
 
-Versión en **TypeScript / TSX** del proyecto `sergio-agenda`. La lógica y la UI son idénticas; solo cambia el lenguaje (JavaScript → TypeScript) y los archivos `.js` se reescriben como `.ts` / `.tsx` con sus correspondientes interfaces y tipos.
+Repositorio compartido para las interfaces de la inmobiliaria.
 
-## 🚀 Guía de inicio rápido
+## Inicio rápido
 1. Clonar el repositorio.
-2. Ejecutar `npm install` para instalar todas las dependencias (incluye `typescript` y `@types/react`).
+2. Ejecutar `npm install` para instalar las dependencias.
 3. Ejecutar `npx expo start` para lanzar el proyecto.
 
-## 📦 Dependencias instaladas
-- **Lucide React Native:** Para los iconos.
-- **React Native SVG:** Necesario para los iconos y gráficos.
-- **RN Circular Progress Indicator:** Para los círculos de objetivos.
-- **TypeScript + @types/react:** Para tipado estático.
+## Dependencias
+- Lucide React Native: para los iconos.
+- React Native SVG: necesario para los iconos y gráficos.
+- RN Circular Progress Indicator: para los círculos de objetivos.
 
-## 🛠 Estructura de ramas
-- `main`: Código base estable.
-- `feature/[nombre]`: Ramas de trabajo para cada pareja/persona.
+## Estructura de ramas
+- `main`: código base estable.
+- `feature/[nombre]`: ramas de trabajo para cada pareja o persona.

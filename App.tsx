@@ -1,25 +1,35 @@
-import React from 'react';
+import 'react-native-gesture-handler';
+
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, SafeAreaView } from 'react-native';
+
+import { AppNavigator } from './src/navigation/AppNavigator';
+import { colors } from './src/theme/colors';
+
+const navigationTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: colors.background,
+    card: colors.surface,
+    primary: colors.primary,
+    text: colors.text,
+    border: colors.border,
+    notification: colors.accent,
+  },
+};
 
 export default function App() {
   return (
-    // SafeAreaView evita que el contenido se tape con el notch (la muesca) del movil
-    <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
-        {/* Aqui es donde cada pareja inyectara sus pantallas o componentes */}
-        <StatusBar style="auto" />
-      </View>
-    </SafeAreaView>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <NavigationContainer theme={navigationTheme}>
+          <StatusBar style="dark" />
+          <AppNavigator />
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F8FAFC',
-  },
-  content: {
-    flex: 1,
-  },
-});

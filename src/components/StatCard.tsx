@@ -12,7 +12,7 @@ type StatCardProps = {
 };
 
 const StatCard = ({ title, iconName, items, color, watermarkIconName }: StatCardProps) => {
-  const icons = LucideIcons as Record<string, React.ComponentType<any>>;
+  const icons = LucideIcons as unknown as Record<string, React.ComponentType<any>>;
   const Icon = icons[iconName] || icons.HelpCircle;
   const WatermarkIcon = icons[watermarkIconName || iconName] || icons.HelpCircle;
   const softBg = `${color}1A`;

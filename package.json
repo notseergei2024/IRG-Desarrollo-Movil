@@ -1,7 +1,7 @@
 {
   "name": "irg-desarrollo-movil",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -16,6 +16,10 @@
     "react-native": "0.81.5",
     "react-native-circular-progress-indicator": "^4.4.2",
     "react-native-svg": "15.12.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.9",
+    "typescript": "^5.5.4"
   },
   "private": true
 }

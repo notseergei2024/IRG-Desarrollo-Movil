@@ -1,8 +1,13 @@
 import { Circle, G, Svg, Text as SvgText } from 'react-native-svg';
 
-import { colors } from '../../theme/colors';
+import { colors } from '../theme/colors';
 
-export function RingProgress({ value, color }: { value: number; color: string }) {
+type RingProgressProps = {
+  value: number;
+  color: string;
+};
+
+export function RingProgress({ value, color }: RingProgressProps) {
   const size = 82;
   const strokeWidth = 8;
   const radius = (size - strokeWidth) / 2;

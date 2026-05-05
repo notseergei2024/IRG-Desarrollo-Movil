@@ -3,8 +3,8 @@ import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useNavigation } from '@react-navigation/native';
 import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 
-import { RingProgress } from '../components/dashboard/RingProgress';
-import { StatCard } from '../components/dashboard/StatCard';
+import { RingProgress } from '../components/RingProgress';
+import { StatCard } from '../components/StatCard';
 import { HOME_DATA } from '../data/mockData';
 import { colors, typography } from '../theme/colors';
 
@@ -43,7 +43,6 @@ export function HomeScreen() {
               title={item.title}
               accent={item.accent}
               iconName={item.iconName}
-              watermarkIconName={item.watermarkIconName}
               bullets={item.bullets}
             />
           ))}

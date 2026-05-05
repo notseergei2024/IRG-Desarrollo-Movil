@@ -6,11 +6,18 @@ import { HomeScreen } from '../screens/HomeScreen';
 import { InsightsScreen } from '../screens/InsightsScreen';
 import { colors } from '../theme/colors';
 
-const Tab = createBottomTabNavigator();
+type TabParamList = {
+  Home: undefined;
+  Agenda: undefined;
+  Insights: undefined;
+};
+
+const Tab = createBottomTabNavigator<TabParamList>();
 
 export function AppNavigator() {
   return (
     <Tab.Navigator
+      id="main-tabs"
       initialRouteName="Home"
       screenOptions={({ route }) => ({
         headerShown: false,

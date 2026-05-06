@@ -22,10 +22,10 @@ export function AppNavigator() {
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.muted,
+        tabBarInactiveTintColor: colors.slate400,
         tabBarStyle: {
-          backgroundColor: colors.surface,
-          borderTopColor: colors.border,
+          backgroundColor: colors.slate50,
+          borderTopColor: colors.gradientBackground[2],
           height: 68,
           paddingTop: 8,
           paddingBottom: 10,

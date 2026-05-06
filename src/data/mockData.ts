@@ -31,7 +31,7 @@ export const HOME_DATA = {
     {
       key: 'zone',
       title: 'Gestión zona',
-      accent: colors.lime,
+      accent: colors.cardGreen,
       iconName: 'MapPin',
       bullets: [
         'Potencial adquisición (seguimiento frecuente)',
@@ -43,7 +43,7 @@ export const HOME_DATA = {
     {
       key: 'news',
       title: 'Gestión noticias',
-      accent: colors.sky,
+      accent: colors.cardBlue,
       iconName: 'Crown',
       bullets: [
         'Noticias por debajo de 15%',
@@ -55,7 +55,7 @@ export const HOME_DATA = {
     {
       key: 'orders',
       title: 'Gestión encargos',
-      accent: colors.amber,
+      accent: colors.cardOrange,
       iconName: 'Flag',
       bullets: [
         'Cartera TOTAL',
@@ -67,7 +67,7 @@ export const HOME_DATA = {
     {
       key: 'requests',
       title: 'Gestión pedidos',
-      accent: colors.primary,
+      accent: colors.cardSky,
       iconName: 'Zap',
       bullets: [
         'Pedidos Viable Kiron (seguimiento frecuente)',
@@ -77,9 +77,9 @@ export const HOME_DATA = {
     },
   ] satisfies DashboardStat[],
   objectives: [
-    { label: 'NT3', value: 0, color: colors.lime, owner: 'alejandro sanchez mijeres' },
+    { label: 'NT3', value: 0, color: colors.cardGreen, owner: 'alejandro sanchez mijeres' },
     { label: 'NT11', value: 1, color: colors.primary, owner: 'ismael reghoud, alejandro sanchez mijeres' },
-    { label: 'IM3', value: 2, color: colors.amber, owner: 'alejandro sanchez mijeres' },
+    { label: 'IM3', value: 2, color: colors.cardOrange, owner: 'alejandro sanchez mijeres' },
   ] satisfies Objective[],
   agenda: {
     owner: 'Ismael Reghoud',
@@ -106,9 +106,9 @@ export const HOME_DATA = {
       '18:00',
     ] satisfies string[],
     events: [
-      { time: '10:00', label: 'Reunión zona', detail: 'Seguimiento potencial adquisición', color: colors.primary },
-      { time: '12:30', label: 'Cita encargos', detail: 'Cartera total y caducados', color: colors.accent },
-      { time: '16:00', label: 'Pedidos oficina', detail: 'Pedidos compra prioridad', color: colors.amber },
+      { time: '10:00', label: 'Reunión zona', detail: 'Seguimiento potencial adquisición', color: colors.cardGreen },
+      { time: '12:30', label: 'Cita encargos', detail: 'Cartera total y caducados', color: colors.cardOrange },
+      { time: '16:00', label: 'Pedidos oficina', detail: 'Pedidos compra prioridad', color: colors.cardSky },
     ] satisfies AgendaSlot[],
   },
   training: {

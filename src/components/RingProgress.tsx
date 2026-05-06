@@ -17,7 +17,7 @@ export function RingProgress({ value, color }: RingProgressProps) {
   return (
     <Svg height={size} width={size}>
       <G rotation="-90" originX={size / 2} originY={size / 2}>
-        <Circle cx={size / 2} cy={size / 2} r={radius} stroke="#E4EAF4" strokeWidth={strokeWidth} fill="none" />
+        <Circle cx={size / 2} cy={size / 2} r={radius} stroke={colors.gradientBackground[2]} strokeWidth={strokeWidth} fill="none" />
         <Circle
           cx={size / 2}
           cy={size / 2}
@@ -30,7 +30,7 @@ export function RingProgress({ value, color }: RingProgressProps) {
           strokeDashoffset={offset}
         />
       </G>
-      <SvgText x="50%" y="55%" textAnchor="middle" fontSize="26" fontWeight="700" fill={colors.text}>
+      <SvgText x="50%" y="55%" textAnchor="middle" fontSize="26" fontWeight="700" fill={colors.textMain}>
         {value}
       </SvgText>
     </Svg>

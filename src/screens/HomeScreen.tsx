@@ -51,7 +51,7 @@ export function HomeScreen() {
         <View style={styles.sectionCard}>
           <View style={styles.sectionHeader}>
             <View style={styles.sectionTitleRow}>
-              <View style={[styles.sectionBadge, { backgroundColor: colors.lime }]} />
+              <View style={[styles.sectionBadge, { backgroundColor: colors.primary }]} />
               <Text style={styles.sectionTitle}>Gestión de Objetivos</Text>
             </View>
             <Pressable style={styles.analysisButton}>
@@ -108,11 +108,11 @@ export function HomeScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.backgroundMain,
   },
   safeArea: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.backgroundMain,
   },
   content: {
     paddingHorizontal: 18,
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     paddingRight: 12,
   },
   greeting: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 30,
     lineHeight: 36,
     fontFamily: typography.title,
@@ -142,14 +142,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     paddingVertical: 12,
     borderRadius: 12,
-    shadowColor: colors.shadow,
+    shadowColor: 'rgba(15, 23, 42, 0.08)',
     shadowOpacity: 1,
     shadowRadius: 14,
     shadowOffset: { width: 0, height: 8 },
     elevation: 3,
   },
   agendaButtonText: {
-    color: colors.surface,
+    color: colors.slate50,
     fontWeight: '700',
   },
   grid: {
@@ -157,10 +157,10 @@ const styles = StyleSheet.create({
     gap: 14,
   },
   sectionCard: {
-    backgroundColor: colors.surface,
+    backgroundColor: colors.slate50,
     borderRadius: 18,
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: colors.gradientBackground[2],
     padding: 16,
     gap: 16,
   },
@@ -182,19 +182,19 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   sectionTitle: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 18,
     fontWeight: '800',
     flex: 1,
   },
   analysisButton: {
-    backgroundColor: colors.accent,
+    backgroundColor: colors.primary,
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderRadius: 8,
   },
   analysisButtonText: {
-    color: colors.surface,
+    color: colors.slate50,
     fontSize: 12,
     fontWeight: '700',
   },
@@ -209,25 +209,25 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   objectiveLabel: {
-    color: colors.text,
+    color: colors.textMain,
     fontWeight: '800',
   },
   objectiveOwner: {
-    color: colors.muted,
+    color: colors.slate400,
     fontSize: 11,
     textAlign: 'center',
     textTransform: 'lowercase',
   },
   trainingCard: {
-    backgroundColor: colors.surface,
+    backgroundColor: colors.slate50,
     borderRadius: 18,
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: colors.gradientBackground[2],
     padding: 16,
     gap: 10,
   },
   trainingSubtitle: {
-    color: colors.accent,
+    color: colors.primary,
     fontSize: 14,
     fontWeight: '700',
   },
@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   videoText: {
-    color: colors.surface,
+    color: colors.slate50,
     fontSize: 17,
     fontWeight: '700',
   },
@@ -254,28 +254,28 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   trainingTeam: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 16,
     fontWeight: '800',
     marginBottom: 4,
   },
   trainingAuthor: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 13,
     fontWeight: '600',
   },
   trainingDuration: {
-    color: colors.muted,
+    color: colors.slate400,
     fontSize: 12,
     marginTop: 4,
   },
   trainingTitle: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 17,
     fontWeight: '800',
   },
   trainingDescription: {
-    color: colors.muted,
+    color: colors.slate400,
     fontSize: 12,
     lineHeight: 18,
   },

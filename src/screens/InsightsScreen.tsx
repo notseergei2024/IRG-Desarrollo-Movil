@@ -19,12 +19,12 @@ export function InsightsScreen() {
           <View style={styles.cardHeader}>
             <View style={styles.titleRow}>
               <View style={[styles.iconBox, { backgroundColor: colors.primary }]}>
-                <BarChart3 color={colors.surface} size={18} />
+                <BarChart3 color={colors.slate50} size={18} />
               </View>
               <Text style={styles.title}>Resumen operativo</Text>
             </View>
             <View style={styles.miniChip}>
-              <Sparkles color={colors.accent} size={14} />
+              <Sparkles color={colors.primary} size={14} />
               <Text style={styles.miniChipText}>Mock data</Text>
             </View>
           </View>
@@ -59,11 +59,11 @@ export function InsightsScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.backgroundMain,
   },
   safeArea: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.backgroundMain,
   },
   content: {
     paddingHorizontal: 18,
@@ -71,10 +71,10 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   card: {
-    backgroundColor: colors.surface,
+    backgroundColor: colors.slate50,
     borderRadius: 18,
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: colors.gradientBackground[2],
     padding: 16,
     gap: 14,
   },
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 18,
     fontWeight: '800',
     fontFamily: typography.title,
@@ -107,18 +107,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
-    backgroundColor: '#F3FBF4',
+    backgroundColor: colors.gradientBackground[1],
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 999,
   },
   miniChipText: {
-    color: colors.accent,
+    color: colors.primary,
     fontSize: 12,
     fontWeight: '700',
   },
   lead: {
-    color: colors.muted,
+    color: colors.slate400,
     fontSize: 13,
     lineHeight: 19,
   },
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   },
   metricCard: {
     flex: 1,
-    backgroundColor: colors.surfaceAlt,
+    backgroundColor: colors.gradientBackground[1],
     borderRadius: 14,
     paddingVertical: 14,
     alignItems: 'center',
@@ -140,27 +140,27 @@ const styles = StyleSheet.create({
     borderRadius: 999,
   },
   metricValue: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 24,
     fontWeight: '800',
   },
   metricLabel: {
-    color: colors.muted,
+    color: colors.slate400,
     fontSize: 12,
     fontWeight: '700',
   },
   sectionTitle: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 18,
     fontWeight: '800',
   },
   trainingTitle: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 16,
     fontWeight: '800',
   },
   trainingText: {
-    color: colors.muted,
+    color: colors.slate400,
     fontSize: 13,
     lineHeight: 19,
   },

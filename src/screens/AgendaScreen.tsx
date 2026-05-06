@@ -30,13 +30,13 @@ export function AgendaScreen() {
             </Text>
             <View style={styles.dateNav}>
               <Pressable style={styles.arrowButton}>
-                <ChevronLeft color={colors.muted} size={18} />
+                <ChevronLeft color={colors.slate400} size={18} />
               </Pressable>
               <Text style={styles.dateText} numberOfLines={1} ellipsizeMode="tail">
                 {HOME_DATA.agenda.date}
               </Text>
               <Pressable style={styles.arrowButton}>
-                <ChevronRight color={colors.muted} size={18} />
+                <ChevronRight color={colors.slate400} size={18} />
               </Pressable>
             </View>
           </View>
@@ -72,21 +72,21 @@ export function AgendaScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.backgroundMain,
   },
   safeArea: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.backgroundMain,
   },
   content: {
     paddingHorizontal: 18,
     paddingBottom: 28,
   },
   hero: {
-    backgroundColor: colors.surface,
+    backgroundColor: colors.slate50,
     borderRadius: 18,
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: colors.gradientBackground[2],
     padding: 16,
     minHeight: 620,
   },
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     marginBottom: 18,
   },
   heroTitle: {
-    color: colors.text,
+    color: colors.textMain,
     fontFamily: typography.title,
     fontSize: 19,
     fontWeight: '800',
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   togglePill: {
     flexDirection: 'row',
     gap: 14,
-    backgroundColor: colors.surfaceAlt,
+    backgroundColor: colors.gradientBackground[1],
     paddingHorizontal: 14,
     paddingVertical: 8,
     borderRadius: 999,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   toggleTextInactive: {
-    color: colors.muted,
+    color: colors.slate400,
     fontWeight: '700',
   },
   dateRow: {
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     marginBottom: 18,
   },
   owner: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 15,
     fontWeight: '800',
     flexShrink: 1,
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   dateText: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 14,
     fontWeight: '700',
     flexShrink: 1,
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
   },
   timeLabel: {
     width: 54,
-    color: colors.muted,
+    color: colors.slate400,
     fontSize: 11,
     fontWeight: '600',
     paddingTop: 2,
@@ -173,11 +173,11 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: 36,
     borderBottomWidth: 1,
-    borderBottomColor: '#E3EAF5',
+    borderBottomColor: colors.gradientBackground[2],
     paddingBottom: 8,
   },
   eventCard: {
-    backgroundColor: '#F8FBFF',
+    backgroundColor: colors.gradientBackground[1],
     borderRadius: 12,
     paddingHorizontal: 12,
     paddingVertical: 10,
@@ -190,12 +190,12 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   eventTitle: {
-    color: colors.text,
+    color: colors.textMain,
     fontWeight: '800',
     fontSize: 13,
   },
   eventDetail: {
-    color: colors.muted,
+    color: colors.slate400,
     fontSize: 12,
     lineHeight: 16,
   },

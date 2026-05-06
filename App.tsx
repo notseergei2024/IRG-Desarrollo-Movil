@@ -12,12 +12,12 @@ const navigationTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: colors.background,
-    card: colors.surface,
+    background: colors.backgroundMain,
+    card: colors.slate50,
     primary: colors.primary,
-    text: colors.text,
-    border: colors.border,
-    notification: colors.accent,
+    text: colors.textMain,
+    border: colors.gradientBackground[2],
+    notification: colors.primary,
   },
 };
 

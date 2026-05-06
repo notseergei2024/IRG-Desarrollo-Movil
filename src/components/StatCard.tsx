@@ -38,10 +38,10 @@ const styles = StyleSheet.create({
   statCard: {
     width: '100%',
     minHeight: 172,
-    backgroundColor: colors.surface,
+    backgroundColor: colors.slate50,
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: colors.gradientBackground[2],
     padding: 16,
     overflow: 'hidden',
   },
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   statTitle: {
-    color: colors.text,
+    color: colors.textMain,
     fontSize: 15,
     fontWeight: '700',
     flex: 1,
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   },
   bulletText: {
     flex: 1,
-    color: colors.muted,
+    color: colors.slate400,
     fontSize: 11.5,
     lineHeight: 16,
   },

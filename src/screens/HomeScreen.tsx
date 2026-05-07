@@ -1,28 +1,23 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
+import { BottomActionBar } from '../components/BottomActionBar';
 import { RingProgress } from '../components/RingProgress';
 import { StatCard } from '../components/StatCard';
 import { HOME_DATA } from '../data/mockData';
 import { colors, typography } from '../theme/colors';
-
-type TabParamList = {
-  Home: undefined;
-  Agenda: undefined;
-  Insights: undefined;
-};
+import type { RootStackParamList } from '../navigation/types';
 
 export function HomeScreen() {
-  const navigation = useNavigation<BottomTabNavigationProp<TabParamList>>();
-  const insets = useSafeAreaInsets();
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
     <SafeAreaView edges={['top']} style={styles.safeArea}>
       <ScrollView
         style={styles.screen}
-        contentContainerStyle={[styles.content, { paddingTop: insets.top + 12 }]}
+        contentContainerStyle={[styles.content, { paddingTop: 12, paddingBottom: 96 }]}
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.topRow}>
@@ -101,6 +96,7 @@ export function HomeScreen() {
           <Text style={styles.trainingDescription}>{HOME_DATA.training.description}</Text>
         </View>
       </ScrollView>
+      <BottomActionBar />
     </SafeAreaView>
   );
 }

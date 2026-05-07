@@ -1,4 +1,5 @@
 import { colors } from '../theme/colors';
+import type { RootStackParamList } from '../navigation/types';
 
 export type DashboardStat = {
   key: string;
@@ -21,6 +22,29 @@ export type AgendaSlot = {
   label?: string;
   detail?: string;
   color?: string;
+};
+
+export type MenuItem = {
+  label: string;
+  route?: keyof RootStackParamList;
+};
+
+export type SearchItem = {
+  label: string;
+  route: keyof RootStackParamList;
+  keywords: string[];
+};
+
+export type ListCard = {
+  title: string;
+  subtitle?: string;
+  lines?: string[];
+};
+
+export type SupportContact = {
+  name: string;
+  role: string;
+  phone: string;
 };
 
 export const HOME_DATA = {
@@ -121,4 +145,123 @@ export const HOME_DATA = {
     description:
       'Medios de julio y plantamos una mesa fuera del año en la que muchos de nuestros clientes se encuentran de vacaciones.',
   },
+};
+
+export const CREATE_DATA = {
+  title: 'Pagina creacion',
+  cardTitle: 'Estado de la pantalla',
+  cardLines: ['Esta pantalla se conectara cuando el compañero termine la implementacion.'],
+};
+
+export const SEARCH_DATA = {
+  title: 'Buscador',
+  placeholder: 'Buscar pantallas...',
+  items: [
+    { label: 'Dashboard', route: 'Home', keywords: ['home', 'inicio', 'dashboard'] },
+    { label: 'Agenda', route: 'Agenda', keywords: ['agenda', 'citas', 'calendario'] },
+    { label: 'Resumen', route: 'Insights', keywords: ['resumen', 'insights'] },
+    { label: 'Clientes', route: 'Clients', keywords: ['clientes', 'client'] },
+    { label: 'Inmuebles', route: 'Properties', keywords: ['inmuebles', 'propiedades'] },
+    { label: 'Pedidos', route: 'Requests', keywords: ['pedidos', 'encargos'] },
+    { label: 'Relaciones cruce', route: 'CrossRelations', keywords: ['relaciones', 'cruce'] },
+    { label: 'Perfil', route: 'Profile', keywords: ['perfil', 'usuario'] },
+    { label: 'Soporte', route: 'Support', keywords: ['soporte', 'ayuda'] },
+  ] satisfies SearchItem[],
+};
+
+export const MENU_DATA = {
+  title: 'Menu',
+  items: [
+    { label: 'Clientes', route: 'Clients' },
+    { label: 'Inmuebles', route: 'Properties' },
+    { label: 'Pedidos', route: 'Requests' },
+    { label: 'Relaciones Cruce', route: 'CrossRelations' },
+    { label: 'Tu perfil', route: 'Profile' },
+    { label: 'Soporte', route: 'Support' },
+    { label: 'Cerrar sesion' },
+  ] satisfies MenuItem[],
+};
+
+export const CLIENTS_DATA = {
+  title: 'Clientes',
+  searchPlaceholder: 'Buscar clientes',
+  cards: [
+    {
+      title: 'Maria Gonzalez',
+      subtitle: 'Interes: Piso 3 habitaciones',
+      lines: ['Telefono: 600 123 456'],
+    },
+    {
+      title: 'Raul Martinez',
+      subtitle: 'Interes: Chalet con patio',
+      lines: ['Telefono: 600 987 321'],
+    },
+  ] satisfies ListCard[],
+};
+
+export const PROPERTIES_DATA = {
+  title: 'Inmuebles',
+  searchPlaceholder: 'Buscar inmuebles',
+  cards: [
+    {
+      title: 'Apartamento Centro',
+      subtitle: '120 m2 · 3 habitaciones',
+      lines: ['Precio: 250.000 €'],
+    },
+    {
+      title: 'Atico Norte',
+      subtitle: '90 m2 · 2 habitaciones',
+      lines: ['Precio: 210.000 €'],
+    },
+  ] satisfies ListCard[],
+};
+
+export const REQUESTS_DATA: { title: string; subtitle: string; cards: ListCard[] } = {
+  title: 'Pedidos',
+  subtitle: 'Seccion de pedidos en construccion.',
+  cards: [
+    {
+      title: 'Pedido oficina',
+      subtitle: 'Prioridad alta · 16:00',
+    },
+    {
+      title: 'Pedido cliente',
+      subtitle: 'Seguimiento semanal · 12:30',
+    },
+  ],
+};
+
+export const CROSS_RELATIONS_DATA: { title: string; subtitle: string; cards: ListCard[] } = {
+  title: 'Relaciones Cruce',
+  subtitle: 'Referencias y cruces de clientes e inmuebles.',
+  cards: [
+    {
+      title: 'Cruce potencial',
+      subtitle: 'Cliente: Maria Gonzalez · Inmueble: Centro',
+    },
+    {
+      title: 'Cruce activo',
+      subtitle: 'Cliente: Raul Martinez · Inmueble: Norte',
+    },
+  ],
+};
+
+export const PROFILE_DATA = {
+  title: 'Tu perfil',
+  name: 'Ismael Reghoud',
+  role: 'Asesor inmobiliario',
+  office: 'Oficina Centro',
+  avatarUrl: 'https://i.pravatar.cc/160?img=12',
+};
+
+export const SUPPORT_DATA = {
+  title: 'Soporte',
+  contacts: [
+    { name: 'Ana Torres', role: 'Asesora', phone: '600 111 222' },
+    { name: 'Carlos Ruiz', role: 'Asesor', phone: '600 333 444' },
+    { name: 'Lucia Perez', role: 'Asesora', phone: '600 555 666' },
+    { name: 'Martin Lopez', role: 'Informatico', phone: '600 777 888' },
+    { name: 'Sofia Mora', role: 'Fotografa', phone: '600 999 000' },
+    { name: 'Nicolas Vega', role: 'Abogado', phone: '600 222 333' },
+  ] satisfies SupportContact[],
 };

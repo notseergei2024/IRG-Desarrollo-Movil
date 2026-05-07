@@ -1,18 +1,17 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { BarChart3, Sparkles } from 'lucide-react-native';
 
 import { HOME_DATA } from '../data/mockData';
+import { BottomActionBar } from '../components/BottomActionBar';
 import { colors, typography } from '../theme/colors';
 
 export function InsightsScreen() {
-  const insets = useSafeAreaInsets();
-
   return (
     <SafeAreaView edges={['top']} style={styles.safeArea}>
       <ScrollView
         style={styles.screen}
-        contentContainerStyle={[styles.content, { paddingTop: insets.top + 12 }]}
+        contentContainerStyle={[styles.content, { paddingTop: 12, paddingBottom: 96 }]}
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.card}>
@@ -52,6 +51,7 @@ export function InsightsScreen() {
           <Text style={styles.trainingText}>{HOME_DATA.training.description}</Text>
         </View>
       </ScrollView>
+      <BottomActionBar />
     </SafeAreaView>
   );
 }

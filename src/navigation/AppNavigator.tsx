@@ -1,55 +1,36 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { CalendarDays, ChartColumnIncreasing, Home } from 'lucide-react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { AgendaScreen } from '../screens/AgendaScreen';
+import { ClientsScreen } from '../screens/ClientsScreen';
+import { CreateScreen } from '../screens/CreateScreen';
+import { CrossRelationsScreen } from '../screens/CrossRelationsScreen';
 import { HomeScreen } from '../screens/HomeScreen';
 import { InsightsScreen } from '../screens/InsightsScreen';
-import { colors } from '../theme/colors';
+import { MenuOverlayScreen } from '../screens/MenuOverlayScreen';
+import { ProfileScreen } from '../screens/ProfileScreen';
+import { PropertiesScreen } from '../screens/PropertiesScreen';
+import { RequestsScreen } from '../screens/RequestsScreen';
+import { SearchScreen } from '../screens/SearchScreen';
+import { SupportScreen } from '../screens/SupportScreen';
+import type { RootStackParamList } from './types';
 
-type TabParamList = {
-  Home: undefined;
-  Agenda: undefined;
-  Insights: undefined;
-};
-
-const Tab = createBottomTabNavigator<TabParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export function AppNavigator() {
   return (
-    <Tab.Navigator
-      id="main-tabs"
-      initialRouteName="Home"
-      screenOptions={({ route }) => ({
-        headerShown: false,
-        tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.slate400,
-        tabBarStyle: {
-          backgroundColor: colors.slate50,
-          borderTopColor: colors.gradientBackground[2],
-          height: 68,
-          paddingTop: 8,
-          paddingBottom: 10,
-        },
-        tabBarLabelStyle: {
-          fontSize: 12,
-          fontWeight: '600',
-        },
-        tabBarIcon: ({ color, size }) => {
-          if (route.name === 'Home') {
-            return <Home color={color} size={size} strokeWidth={2.2} />;
-          }
-
-          if (route.name === 'Agenda') {
-            return <CalendarDays color={color} size={size} strokeWidth={2.2} />;
-          }
-
-          return <ChartColumnIncreasing color={color} size={size} strokeWidth={2.2} />;
-        },
-      })}
-    >
-      <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Inicio' }} />
-      <Tab.Screen name="Agenda" component={AgendaScreen} options={{ title: 'Agenda' }} />
-      <Tab.Screen name="Insights" component={InsightsScreen} options={{ title: 'Resumen' }} />
-    </Tab.Navigator>
+    <Stack.Navigator id="main-stack" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Agenda" component={AgendaScreen} />
+      <Stack.Screen name="Insights" component={InsightsScreen} />
+      <Stack.Screen name="Create" component={CreateScreen} />
+      <Stack.Screen name="Search" component={SearchScreen} />
+      <Stack.Screen name="MenuOverlay" component={MenuOverlayScreen} />
+      <Stack.Screen name="Clients" component={ClientsScreen} />
+      <Stack.Screen name="Properties" component={PropertiesScreen} />
+      <Stack.Screen name="Requests" component={RequestsScreen} />
+      <Stack.Screen name="CrossRelations" component={CrossRelationsScreen} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="Support" component={SupportScreen} />
+    </Stack.Navigator>
   );
 }

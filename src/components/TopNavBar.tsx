@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
@@ -31,7 +31,12 @@ export function TopNavBar() {
         <Text style={styles.logoText}>CRM</Text>
       </Pressable>
 
-      <View style={styles.links}>
+      <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.links}
+          style={styles.linksScroll}
+        >
         {NAV_LINKS.map((link) => {
           const isActive = route.name === link.route;
           return (
@@ -50,7 +55,7 @@ export function TopNavBar() {
             </Pressable>
           );
         })}
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -84,11 +89,13 @@ const styles = StyleSheet.create({
   },
 
 
+  linksScroll: {
+    flex: 1,
+  },
   links: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
-    flex: 1,
   },
   linkPressable: {
     paddingHorizontal: 8,

@@ -34,6 +34,9 @@ export function TopNavBar() {
       <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
+          nestedScrollEnabled
+          keyboardShouldPersistTaps="handled"
+          overScrollMode="always"
           contentContainerStyle={styles.links}
           style={styles.linksScroll}
         >
@@ -90,7 +93,8 @@ const styles = StyleSheet.create({
 
 
   linksScroll: {
-    flex: 1,
+    flexShrink: 1,
+    flexGrow: 1,
   },
   links: {
     flexDirection: 'row',

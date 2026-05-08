@@ -147,6 +147,90 @@ export const HOME_DATA = {
   },
 };
 
+export type Activity = {
+  id: string;
+  type: 'call' | 'visit' | 'meeting' | 'task' | 'follow-up';
+  title: string;
+  description: string;
+  time: string;
+  date: string;
+  status: 'pending' | 'completed' | 'in-progress';
+  color: string;
+};
+
+export const ACTIVITIES_DATA: Activity[] = [
+  {
+    id: '1',
+    type: 'call',
+    title: 'Llamar a Maria Gonzalez',
+    description: 'Seguimiento interés piso 3 habitaciones centro',
+    time: '09:30',
+    date: 'Hoy',
+    status: 'completed',
+    color: colors.cardGreen,
+  },
+  {
+    id: '2',
+    type: 'visit',
+    title: 'Visita Apartamento Centro',
+    description: 'Enseñar inmueble a Raul Martinez — 120 m²',
+    time: '11:00',
+    date: 'Hoy',
+    status: 'in-progress',
+    color: colors.primary,
+  },
+  {
+    id: '3',
+    type: 'meeting',
+    title: 'Reunión equipo oficina',
+    description: 'Revisión semanal cartera y objetivos',
+    time: '13:00',
+    date: 'Hoy',
+    status: 'pending',
+    color: colors.cardOrange,
+  },
+  {
+    id: '4',
+    type: 'follow-up',
+    title: 'Seguimiento Ático Norte',
+    description: 'Confirmar disponibilidad y enviar documentación',
+    time: '15:30',
+    date: 'Hoy',
+    status: 'pending',
+    color: colors.cardSky,
+  },
+  {
+    id: '5',
+    type: 'task',
+    title: 'Actualizar fichas inmuebles',
+    description: 'Subir nuevas fotografías y ajustar precios',
+    time: '17:00',
+    date: 'Hoy',
+    status: 'pending',
+    color: colors.cardBlue,
+  },
+  {
+    id: '6',
+    type: 'call',
+    title: 'Contactar propietario zona sur',
+    description: 'Inmueble sin contactar > 90 días — prioridad alta',
+    time: '09:00',
+    date: 'Mañana',
+    status: 'pending',
+    color: colors.cardGreen,
+  },
+  {
+    id: '7',
+    type: 'visit',
+    title: 'Valoración chalet Las Rozas',
+    description: 'Nueva captación — visita de valoración',
+    time: '10:30',
+    date: 'Mañana',
+    status: 'pending',
+    color: colors.primary,
+  },
+];
+
 export const CREATE_DATA = {
   title: 'Pagina creacion',
   cardTitle: 'Estado de la pantalla',

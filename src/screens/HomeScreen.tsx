@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { BottomActionBar } from '../components/BottomActionBar';
+import { TopNavBar } from '../components/TopNavBar';
 import { RingProgress } from '../components/RingProgress';
 import { StatCard } from '../components/StatCard';
 import { HOME_DATA } from '../data/mockData';
@@ -15,6 +16,7 @@ export function HomeScreen() {
 
   return (
     <SafeAreaView edges={['top']} style={styles.safeArea}>
+      <TopNavBar />
       <ScrollView
         style={styles.screen}
         contentContainerStyle={[styles.content, { paddingTop: 12, paddingBottom: 96 }]}

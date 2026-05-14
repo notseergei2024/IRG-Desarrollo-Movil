@@ -4,11 +4,13 @@ import { BarChart3, Sparkles } from 'lucide-react-native';
 
 import { HOME_DATA } from '../data/mockData';
 import { BottomActionBar } from '../components/BottomActionBar';
+import { TopNavBar } from '../components/TopNavBar';
 import { colors, typography } from '../theme/colors';
 
 export function InsightsScreen() {
   return (
     <SafeAreaView edges={['top']} style={styles.safeArea}>
+      <TopNavBar />
       <ScrollView
         style={styles.screen}
         contentContainerStyle={[styles.content, { paddingTop: 12, paddingBottom: 96 }]}

@@ -10,19 +10,24 @@ type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 type HeaderBackButtonProps = {
   onPress?: () => void;
+  variant?: 'default' | 'light';
 };
 
-export function HeaderBackButton({ onPress }: HeaderBackButtonProps) {
+export function HeaderBackButton({ onPress, variant = 'default' }: HeaderBackButtonProps) {
   const navigation = useNavigation<NavigationProp>();
+  const isLight = variant === 'light';
 
   return (
     <Pressable
       accessibilityRole="button"
       accessibilityLabel="Volver"
-      style={styles.button}
+      style={[
+        styles.button,
+        isLight && styles.buttonLight,
+      ]}
       onPress={onPress ?? navigation.goBack}
     >
-      <ChevronLeft color={colors.slate50} size={18} />
+      <ChevronLeft color={isLight ? colors.primary : colors.slate50} size={18} />
     </Pressable>
   );
 }
@@ -37,5 +42,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  buttonLight: {
+    backgroundColor: colors.slate50,
+    borderColor: colors.slate50,
   },
 });

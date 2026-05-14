@@ -46,7 +46,11 @@ export function TopNavBar() {
           return (
             <Pressable
               key={link.route}
-              onPress={() => {}}
+              onPress={() => {
+                if (link.label === 'Inmuebles') {
+                  navigation.navigate(link.route);
+                }
+              }}
               style={({ pressed }) => [
                 styles.linkPressable,
                 pressed && styles.linkPressed,

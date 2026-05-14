@@ -17,7 +17,7 @@ export function MenuOverlayScreen() {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.header}>
         <Text style={styles.title}>{MENU_DATA.title}</Text>
-        <HeaderBackButton />
+        <HeaderBackButton variant="light" />
       </View>
 
       <ScrollView contentContainerStyle={styles.list}>
@@ -38,7 +38,7 @@ export function MenuOverlayScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: colors.backgroundMain,
+    backgroundColor: colors.primary,
   },
   header: {
     paddingHorizontal: 20,
@@ -48,24 +48,29 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     borderBottomWidth: 1,
-    borderBottomColor: colors.gradientBackground[2],
+    borderBottomColor: 'rgba(255, 255, 255, 0.25)',
   },
   title: {
     fontSize: 18,
     fontWeight: '700',
-    color: colors.textMain,
+    color: colors.slate50,
     fontFamily: typography.title,
   },
   list: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 20,
     gap: 16,
   },
   item: {
     paddingVertical: 8,
+    alignItems: 'center',
   },
   itemText: {
-    color: colors.textMain,
+    color: colors.slate50,
     fontSize: 16,
     fontWeight: '600',
+    textAlign: 'center',
   },
 });
